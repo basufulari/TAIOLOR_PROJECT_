@@ -1,0 +1,14 @@
+services:
+  mongodb:
+    image: mongo:6
+    container_name: ai-tailor-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - ai_tailor_mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: ai_tailor
+
+volumes:
+  ai_tailor_mongo_data:
